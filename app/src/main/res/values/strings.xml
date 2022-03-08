@@ -1,0 +1,24 @@
+<resources>
+    <string name="appName">Movie Tickets</string>
+    <string name="movieSummary">Summary: ...</string>
+    <string name="numTickets">How many tickets?</string>
+    <string name="price">Price per ticket is: $</string>
+    <string name="total">Total: $</string>
+    <string name="adult">Adult</string>
+    <string name="child">Minor (half price)</string>
+    <string name="getTickets">Get Tickets!</string>
+    <string name="date">Choose a date:</string>
+    <string name="aladdin">Aladdin</string>
+    <string name="avengers">Avengers</string>
+    <string name="batman">Batman: Dark Knight</string>
+    <string name="frozen">Frozen</string>
+    <string name="hp">Harry Potter: And the Sorcerer\'s Stone</string>
+    <string name="lotr">The Lord of the Rings: Fellowship</string>
+    <string name="moana">Moana</string>
+    <string name="mulan">Mulan</string>
+    <string name="notebook">The Notebook</string>
+    <string name="pirates">Pirates of the Caribbean</string>
+    <string name="toystory">Toy Story</string>
+    <string name="lionKing">The Lion King</string>
+
+</resources>

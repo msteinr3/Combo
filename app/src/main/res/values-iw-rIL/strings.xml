@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="price">"מחיר לכרתיס $15 "</string>
+    <string name="total">סך:</string>
+    <string name="adult">מבוגר</string>
+    <string name="child">ילד</string>
+    <string name="getTickets">לקנות!</string>
+    <string name="date">בחר תעריך</string>
+    <string name="movie">צעצוע של סיפור</string>
+    <string name="movieSummary">סיכום:</string>
+    <string name="numTickets">כמה צרתיסים?</string>
+    <string name="aladdin">אלדין</string>
+    <string name="avengers">אבנגרס</string>
+    <string name="batman">בטמן</string>
+    <string name="frozen">פרוזן</string>
+    <string name="hp">הרי פותר</string>
+    <string name="lionKing">מלך האריות</string>
+    <string name="lotr">שר הטבעות</string>
+    <string name="moana">מואנה</string>
+    <string name="mulan">מולן</string>
+    <string name="notebook">המחברת</string>
+    <string name="pirates">פיראטים</string>
+    <string name="toystory">צעצוע של סיפור</string>
+    <string name="toyStorySummary">צעצוע חדש מגיע לבית וחושב שהוא אמיתי</string>
+    <string name="appName">קניית כרתיסים</string>
+</resources>

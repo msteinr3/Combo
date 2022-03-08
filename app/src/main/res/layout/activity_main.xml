@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/DarkGray">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:background="@color/White"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/shapeLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/aladdinButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/aladdin"
+                            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/avengersButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/avengers"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/batmanButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/batman"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/frozenButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/frozen"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/hpButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/harrypotter"
+                            tools:ignore="SpeakableTextPresentCheck" />
+
+                        <ImageButton
+                            android:id="@+id/lionButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/lionking" />
+
+                        <ImageButton
+                            android:id="@+id/lotrButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/lotr" />
+
+                        <ImageButton
+                            android:id="@+id/moanaButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/moana" />
+
+                        <ImageButton
+                            android:id="@+id/mulanButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/mulan" />
+
+                        <ImageButton
+                            android:id="@+id/notebookButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/notebook" />
+
+                        <ImageButton
+                            android:id="@+id/piratesButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/pirates" />
+
+                        <ImageButton
+                            android:id="@+id/toysButton"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:layout_marginHorizontal="5dp"
+                            android:background="@drawable/toystory" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                //Movie Title
+
+                //summary
+
+                <TextView
+                    android:id="@+id/whichMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:id="@+id/summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/movieSummary"
+                    android:textSize="25sp" />
+
+                //information on ticket price
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/price"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/moviePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/ageResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/adult"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/adult"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/child"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/child"
+                            android:textSize="20sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    //asks how many tickets
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/numTickets"
+                        android:textSize="25sp" />
+                    //receives answer as number
+
+                    <EditText
+                        android:id="@+id/numTickets"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    />
+                </LinearLayout>
+                //Horizontal stack
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    //total
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:textSize="25sp" />
+                    //calculates total
+
+                    <TextView
+                        android:id="@+id/total_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    //choose date
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/dateClicked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp" />
+                </LinearLayout>
+
+                //need to watch, but can already click on date
+
+                //I want the button to make the receipt and confirm button show up
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"/>
+
+                <Button
+                    android:id="@+id/buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:backgroundTint="@color/Orange"
+                    android:text="@string/getTickets"
+                    android:textColor="@color/blue"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ticket"
+                        android:layout_width="375dp"
+                        android:layout_height="164dp"
+                        android:layout_marginHorizontal="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/movieTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/Orange"
+                    android:text="Confirm purchase"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/confirmation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
