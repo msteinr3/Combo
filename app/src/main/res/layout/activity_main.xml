@@ -9,7 +9,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
         android:background="@color/DarkGray">
 
         <RelativeLayout
@@ -21,11 +20,17 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/movie"
+                    android:text="Now Playing "
+                    android:textSize="30sp" />
+
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="170dp"
-                    android:background="@color/White"
-                    >
+                    android:background="@color/LightSalmon">
 
                     <LinearLayout
                         android:id="@+id/shapeLayout"
@@ -125,14 +130,11 @@
                     </LinearLayout>
                 </HorizontalScrollView>
 
-                //Movie Title
-
-                //summary
-
                 <TextView
                     android:id="@+id/whichMovie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="Title:..."
                     android:textSize="35sp" />
 
                 <TextView
@@ -219,26 +221,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    //total
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/total"
-                        android:textSize="25sp" />
-                    //calculates total
-
-                    <TextView
-                        android:id="@+id/total_cost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="25sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
                     //choose date
 
                     <TextView
@@ -262,7 +244,7 @@
                     android:id="@+id/calendarView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"/>
+                    android:background="@color/Honeydew" />
 
                 <Button
                     android:id="@+id/buy"
@@ -271,7 +253,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:backgroundTint="@color/Orange"
                     android:text="@string/getTickets"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -281,9 +263,9 @@
 
                     <ImageView
                         android:id="@+id/ticket"
-                        android:layout_width="375dp"
-                        android:layout_height="164dp"
-                        android:layout_marginHorizontal="20dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -295,8 +277,8 @@
                             android:id="@+id/movieTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:textStyle="bold"/>
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/number"
@@ -320,7 +302,7 @@
                             android:id="@+id/price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp" />
+                            android:textSize="25sp" />
                     </LinearLayout>
                 </RelativeLayout>
 
@@ -329,10 +311,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
-                    android:backgroundTint="@color/blue"
-                    android:textColor="@color/Orange"
+                    android:backgroundTint="@color/Orange"
                     android:text="Confirm purchase"
                     android:textAllCaps="false"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
                 <TextView
