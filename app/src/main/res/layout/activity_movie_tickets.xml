@@ -311,19 +311,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="20dp"
+                    android:layout_marginBottom="30dp"
                     android:backgroundTint="@color/Orange"
                     android:text="Confirm purchase"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/confirmation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:layout_marginBottom="20dp"
-                    android:textSize="25sp" />
 
             </LinearLayout>
         </RelativeLayout>

@@ -329,7 +329,6 @@ class MovieTickets : AppCompatActivity() {
         }
 
         val confirm = findViewById<Button>(R.id.confirm)
-        val confirmation = findViewById<TextView>(R.id.confirmation)
 
         confirm.setOnClickListener {
             if (clicked == 0) {
@@ -339,15 +338,14 @@ class MovieTickets : AppCompatActivity() {
                 builder.setMessage("Are you sure you want to confirm purchase?")
                 builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, id ->
                     dialog.cancel()
-                    //confirmation.text = "Confirmed! Enjoy the movie"
-                    //pic.setImageResource(R.drawable.emptytix)
+
                     val intent = Intent(this, Confirmation::class.java)
                     startActivity(intent)
                 })
                 builder.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
                     dialog.cancel()
-                    confirmation.text = ""
                     pic.setImageResource(android.R.color.transparent)
+                    clicked = 0
                 })
                 val alert = builder.create()
                 alert.setTitle("Confirmation")
