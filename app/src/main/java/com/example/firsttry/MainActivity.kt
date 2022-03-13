@@ -2,6 +2,7 @@ package com.example.firsttry
 
 import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -302,6 +303,7 @@ class MainActivity : AppCompatActivity() {
         val age = findViewById<TextView>(R.id.age)
         val date = findViewById<TextView>(R.id.date)
         val price = findViewById<TextView>(R.id.price)
+        val pic = findViewById<ImageView>(R.id.ticket)
         var clicked = 0
 
         getTix.setOnClickListener {
@@ -323,7 +325,7 @@ class MainActivity : AppCompatActivity() {
 
             } else {
                 //calculate total
-                var cost = numOfTickets * pricePerTicket
+                val cost = numOfTickets * pricePerTicket
                 totalPrice = if (adultChild == "Minor") {
                     cost / 2
                 } else {
@@ -336,12 +338,12 @@ class MainActivity : AppCompatActivity() {
                 age.text = adultChild
                 date.text = "date: $dateChosen"
                 price.text = "Total: $$totalPrice"
+                pic.setImageResource(R.drawable.emptytix)
             }
         }
 
         val confirm = findViewById<Button>(R.id.confirm)
         val confirmation = findViewById<TextView>(R.id.confirmation)
-        val pic = findViewById<ImageView>(R.id.ticket)
 
         confirm.setOnClickListener {
             if (clicked == 0) {
@@ -351,8 +353,10 @@ class MainActivity : AppCompatActivity() {
                 builder.setMessage("Are you sure you want to confirm purchase?")
                 builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, id ->
                     dialog.cancel()
-                    confirmation.text = "Confirmed! Enjoy the movie"
-                    pic.setImageResource(R.drawable.emptytix)
+                    //confirmation.text = "Confirmed! Enjoy the movie"
+                    //pic.setImageResource(R.drawable.emptytix)
+                    val intent = Intent(this, Confirmation::class.java)
+                    startActivity(intent)
                 })
                 builder.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
                     dialog.cancel()

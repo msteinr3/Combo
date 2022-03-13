@@ -144,8 +144,6 @@
                     android:text="@string/movieSummary"
                     android:textSize="25sp" />
 
-                //information on ticket price
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -156,6 +154,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/price"
                         android:textSize="25sp" />
+                    //information on ticket price
 
                     <TextView
                         android:id="@+id/moviePrice"
@@ -209,6 +208,7 @@
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:hint="#"
                         android:inputType="number"
                         android:textAlignment="center"
                         android:textSize="25sp"
