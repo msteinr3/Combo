@@ -10,9 +10,11 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.23" />
         <entry key="app/src/main/res/drawable/movie.xml" value="0.149" />
         <entry key="app/src/main/res/layout/activity_confirmation.xml" value="0.28430953398888414" />
+        <entry key="app/src/main/res/layout/activity_fashion.xml" value="0.28430953398888414" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2715057373046875" />
         <entry key="app/src/main/res/layout/activity_movie_tickets.xml" value="0.28093306288032455" />
         <entry key="app/src/main/res/layout/activity_restaurants.xml" value="0.2749994614545037" />
+        <entry key="app/src/main/res/layout/item_data.xml" value="0.29585292860196666" />
         <entry key="app/src/main/res/layout/listview_item.xml" value="0.20778110303548525" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.142" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.142" />

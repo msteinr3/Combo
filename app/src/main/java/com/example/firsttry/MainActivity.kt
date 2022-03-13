@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, Restaurants::class.java)
                 startActivity(intent)
             }
+            if (position == 2) {
+                val intent = Intent(this, Fashion::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
