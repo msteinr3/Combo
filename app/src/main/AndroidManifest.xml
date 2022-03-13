@@ -5,10 +5,16 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/appName"
+        android:label="Assignment 1"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTry">
+        <activity
+            android:name=".Restaurants"
+            android:exported="false" />
+        <activity
+            android:name=".MovieTickets"
+            android:exported="false" />
         <activity
             android:name=".Confirmation"
             android:exported="false" />
