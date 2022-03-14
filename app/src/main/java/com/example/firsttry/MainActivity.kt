@@ -42,6 +42,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, Fashion::class.java)
                 startActivity(intent)
             }
+            if (position == 3) {
+                val intent = Intent(this, Drawing::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

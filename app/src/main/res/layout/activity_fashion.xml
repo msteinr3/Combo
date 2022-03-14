@@ -21,8 +21,10 @@
             android:id="@+id/grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:numColumns="3"
+            android:columnWidth="150dp"
+            android:horizontalSpacing="15dp"
+            android:verticalSpacing="15dp"
+            android:numColumns="auto_fit"
             />
 
         <Button
