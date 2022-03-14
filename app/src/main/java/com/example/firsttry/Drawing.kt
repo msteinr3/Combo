@@ -10,6 +10,16 @@ class Drawing : AppCompatActivity() {
 
         //do something
 
+        val actionbar = supportActionBar
+        actionbar!!.title = "Drawing"
 
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

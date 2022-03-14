@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val slide: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_in)
 
         val listView = findViewById<ListView>(R.id.list)
-        var array = arrayOf("Movie Tickets", "Restaurants", "Fashion", "Other")
+        var array = arrayOf("Movie Tickets", "Restaurants", "Fashion", "Drawing")
         val adapter = ArrayAdapter(this, R.layout.listview_item, array)
 
         listView.adapter = adapter
