@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.*
@@ -294,18 +295,18 @@ class MovieTickets : AppCompatActivity() {
 
         getTix.setOnClickListener {
             if (movieName == "" || amount == "" || adultChild == "" || dateChosen == "") {
-                val builder = StringBuilder("Missing information:")
+                val builder = StringBuilder("Missing info:\n")
                 if (movieName.isEmpty()) {
-                    builder.append("\nPick a movie")
+                    builder.append("Movie, ")
                 }
                 if (amount.isEmpty()) {
-                    builder.append("\nHow many tickets?")
+                    builder.append("# of tickets, ")
                 }
                 if (adultChild.isEmpty()) {
-                    builder.append("\nAdult or minor?")
+                    builder.append("Minor, ")
                 }
                 if (dateChosen.isEmpty()) {
-                    builder.append("\nChoose a date")
+                    builder.append("Date")
                 }
                 Toast.makeText(this, builder.toString(), Toast.LENGTH_LONG).show()
 

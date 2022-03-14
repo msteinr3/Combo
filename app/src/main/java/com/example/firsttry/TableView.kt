@@ -2,6 +2,7 @@ package com.example.firsttry
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
@@ -10,7 +11,7 @@ import java.security.AccessControlContext
 import java.util.jar.Attributes
 
 class TableView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defyStyleAttr: Int = 0
+    context: Context, attrs: AttributeSet? = null, defyStyleAttr: Int = 0,
 ) : View(context, attrs, defyStyleAttr) {
 
     override fun onDraw(canvas: Canvas?) {
