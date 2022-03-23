@@ -26,7 +26,7 @@ class Fashion : AppCompatActivity() {
 
         val array = arrayOf(blackShirt, blueShirt, pants, jeans, blackDress, blueDress, shoes, boots)
 
-        //translate array to gridview using layout item_data
+        //translate array to gridview (recycler view) using layout item_data
         //pic is the name of the image
         //text under is price, brand, description
         //when we click each one, clicked should change to 1, highlight the background, add to cart
@@ -38,25 +38,30 @@ class Fashion : AppCompatActivity() {
         val confirm = findViewById<Button>(R.id.confirm)
 
         confirm.setOnClickListener {
-            //if (clicked == 0) {
-           // } else {
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("Confirmation")
-                builder.setMessage("Are you sure you want to confirm purchase?")
-                builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, id ->
-                    dialog.cancel()
 
-                    val intent = Intent(this, Confirmation::class.java)
-                    startActivity(intent)
-                })
-                builder.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Confirmation")
+            builder.setMessage("Are you sure you want to confirm purchase?")
+            builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, id ->
+                dialog.cancel()
+
+                val build = AlertDialog.Builder(this)
+                build.setTitle("Confirmed")
+                build.setMessage("Enjoy")
+                build.setIcon(R.drawable.ic_baseline_check_circle_24)
+                build.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
                     dialog.cancel()
-                    //pic.setImageResource(android.R.color.transparent)
                 })
-                val alert = builder.create()
-                alert.setTitle("Confirmation")
+                val alert = build.create()
+                alert.setTitle("Confirmed")
                 alert.show()
-            //}
+            })
+            builder.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
+                dialog.cancel()
+            })
+            val alert = builder.create()
+            alert.setTitle("Confirmation")
+            alert.show()
         }
 
         val actionbar = supportActionBar

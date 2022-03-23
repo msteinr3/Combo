@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Swag">
+
+
+    <ImageButton
+        android:id="@+id/maya"
+        android:tag="off"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/maya"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:paddingHorizontal="20dp">
+
+            <ImageButton
+                android:id="@+id/benji"
+                android:tag="off"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/benji" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/daniella"
+                android:tag="off"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/daniella" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:paddingHorizontal="20dp">
+
+            <ImageButton
+                android:id="@+id/jake"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/jake" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/sarah"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/sarah" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:paddingHorizontal="20dp">
+
+            <ImageButton
+                android:id="@+id/jared"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/jared" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/elana"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/elana" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:paddingHorizontal="20dp">
+
+            <ImageButton
+                android:id="@+id/david"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/david" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/sol"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/sol" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_volume_off_24" />
+
+    </LinearLayout>
+</RelativeLayout>

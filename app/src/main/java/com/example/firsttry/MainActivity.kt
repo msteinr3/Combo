@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         //list stuff
         val listView = findViewById<ListView>(R.id.list)
-        var array = arrayOf("Movie Tickets", "Restaurants", "Fashion", "Drawing", "Tic Tac Toe")
+        var array = arrayOf("Movie Tickets", "Restaurants", "Fashion", "Drawing", "Tic Tac Toe", "Swag Swag")
         val adapter = ArrayAdapter(this, R.layout.listview_item, array)
 
         listView.adapter = adapter
@@ -43,12 +43,16 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, Tic_Tac_Toe::class.java)
                 startActivity(intent)
             }
+            if (position == 5) {
+                val intent = Intent(this, Swag::class.java)
+                startActivity(intent)
+            }
         }
 
         //sound stuff
         var mMediaPlayer: MediaPlayer? = null
 
-        // 1. Plays sound
+        // 0. Plays sound
         fun playSound() {
             if (mMediaPlayer == null) {
                 mMediaPlayer = MediaPlayer.create(this, R.raw.tada)

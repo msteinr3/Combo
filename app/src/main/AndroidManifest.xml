@@ -25,7 +25,7 @@
             android:name=".MovieTickets"
             android:exported="false" />
         <activity
-            android:name=".Confirmation"
+            android:name=".Swag"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
