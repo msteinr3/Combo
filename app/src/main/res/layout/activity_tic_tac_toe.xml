@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Tic_Tac_Toe">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Tic Tac Toe"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/turn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Turn: X"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center">
+
+        <com.example.firsttry.model.Tic_tac_toe
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_weight="0">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/Pink"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="100"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="100"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="100"
+                    android:textSize="20sp" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+</LinearLayout>

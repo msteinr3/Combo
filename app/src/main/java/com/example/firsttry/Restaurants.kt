@@ -148,16 +148,12 @@ class Restaurants : AppCompatActivity() {
 
         val time = findViewById<TimePicker>(R.id.time)
         val timeClicked = findViewById<TextView>(R.id.timeClicked)
+        time.setIs24HourView(false)
         var ampm = ""
         var timeChosen = ""
         time.setOnTimeChangedListener { _, hour, minutes, ->
-            ampm = if (hour < 12) { "am" } else {"pm"}
-            val hour = if (hour == 0 || hour == 12) {
-                12
-            } else {
-                (hour%12).toString()
-            }
-
+            ampm = if (hour < 12) {"am"} else {"pm"}
+            val hour = if (hour == 0 || hour == 12) {"12"} else {(hour%12).toString()}
             val minutes = if (minutes < 10) {
                 "0$minutes"
             } else {
@@ -203,21 +199,21 @@ class Restaurants : AppCompatActivity() {
 
         reserve.setOnClickListener {
             if (name == "" || timeChosen == "" || amount == "" || vegan == "" || credit == "") {
-                val builder = StringBuilder("Missing information:")
+                val builder = StringBuilder("Missing information:\n")
                 if (name.isEmpty()) {
-                    builder.append("\nPick a restaurant")
+                    builder.append("Restaurant")
                 }
                 if (timeChosen.isEmpty()) {
-                    builder.append("\nPick a time")
+                    builder.append(", time")
                 }
                 if (amount.isEmpty()) {
-                    builder.append("\nHow many seats?")
+                    builder.append("\n, # of seats")
                 }
                 if (vegan.isEmpty()) {
-                    builder.append("\nVegan?")
+                    builder.append("\n, vegan")
                 }
                 if (credit.isEmpty()) {
-                    builder.append("\nChoose a payment method")
+                    builder.append("\n, payment method")
                 }
                 Toast.makeText(this, builder.toString(), Toast.LENGTH_LONG).show()
 

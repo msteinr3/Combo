@@ -1,4 +1,4 @@
-package com.example.firsttry
+package com.example.firsttry.model
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,7 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class TableView @JvmOverloads constructor(
+class Tic_tac_toe @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defyStyleAttr: Int = 0,
 ) : View(context, attrs, defyStyleAttr) {
 
@@ -16,13 +16,13 @@ class TableView @JvmOverloads constructor(
         val paint = Paint()
         val width = width.toFloat()
         val height = height.toFloat()
-        var columns = 10
-        var rows = 10
+        var columns = 3
+        var rows = 3
 
-        for (i in 0..columns) {
+        for (i in 1..columns-1) {
             canvas?.drawLine(i * (width / columns), 0f, i * (width / columns), width, paint)
         }
-        for (j in 0..rows) {
+        for (j in 1..rows-1) {
             canvas?.drawLine(0f, j * (width / rows), width, j * (width / rows), paint)
 
         }

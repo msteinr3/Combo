@@ -340,13 +340,19 @@ class MovieTickets : AppCompatActivity() {
                 builder.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, id ->
                     dialog.cancel()
 
-                    val intent = Intent(this, Confirmation::class.java)
-                    startActivity(intent)
+                    val build = AlertDialog.Builder(this)
+                    build.setTitle("Confirmed")
+                    build.setMessage("Enjoy $movieName")
+                    build.setIcon(R.drawable.ic_baseline_check_circle_24)
+                    build.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
+                        dialog.cancel()
+                    })
+                    val alert = build.create()
+                    alert.setTitle("Confirmed")
+                    alert.show()
                 })
                 builder.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
                     dialog.cancel()
-                    pic.setImageResource(android.R.color.transparent)
-                    clicked = 0
                 })
                 val alert = builder.create()
                 alert.setTitle("Confirmation")

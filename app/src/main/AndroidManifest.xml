@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTry">
         <activity
+            android:name=".Tic_Tac_Toe"
+            android:exported="false" />
+        <activity
             android:name=".Drawing"
             android:exported="false" />
         <activity
