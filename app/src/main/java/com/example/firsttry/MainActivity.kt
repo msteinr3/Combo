@@ -7,21 +7,26 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.firsttry.databinding.ActivityMainBinding
+import com.example.firsttry.databinding.ActivityMovieTicketsBinding
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding : ActivityMainBinding
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //list stuff
-        val listView = findViewById<ListView>(R.id.list)
         var array = arrayOf("Movie Tickets", "Restaurants", "Fashion", "Drawing", "Tic Tac Toe", "Swag Swag")
         val adapter = ArrayAdapter(this, R.layout.listview_item, array)
 
-        listView.adapter = adapter
-        listView.setOnItemClickListener { parent, view, position, id ->
+        binding.list.adapter = adapter
+        binding.list.setOnItemClickListener { parent, view, position, id ->
 
             if (position == 0) {
                 val intent = Intent(this, MovieTickets::class.java)
@@ -93,18 +98,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val play = findViewById<Switch>(R.id.sound_on)
-        val sound = findViewById<ImageView>(R.id.sound)
-        val on_off = findViewById<TextView>(R.id.on_off)
-
-        play.setOnCheckedChangeListener { _, isChecked ->
+        binding.play.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                sound.setImageResource(R.drawable.ic_baseline_volume_up_24)
-                on_off.text = "Sound: On"
+                binding.sound.setImageResource(R.drawable.ic_baseline_volume_up_24)
+                binding.onOff.text = "Sound: On"
                 playSoundLooped()
             } else {
-                sound.setImageResource(R.drawable.ic_baseline_volume_off_24)
-                on_off.text = "Sound: Off"
+                binding.sound.setImageResource(R.drawable.ic_baseline_volume_off_24)
+                binding.onOff.text = "Sound: Off"
                 pauseSound()
             }
         }

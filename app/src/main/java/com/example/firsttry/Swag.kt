@@ -4,22 +4,20 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
+import com.example.firsttry.databinding.ActivityMovieTicketsBinding
+import com.example.firsttry.databinding.ActivitySwagBinding
 
 class Swag : AppCompatActivity() {
+
+    private lateinit var binding : ActivitySwagBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_swag)
+        binding = ActivitySwagBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val maya = findViewById<ImageButton>(R.id.maya)
-        val benji = findViewById<ImageButton>(R.id.benji)
-        val daniella = findViewById<ImageButton>(R.id.daniella)
-        val jake = findViewById<ImageButton>(R.id.jake)
-        val sarah = findViewById<ImageButton>(R.id.sarah)
-        val jared = findViewById<ImageButton>(R.id.jared)
-        val elana = findViewById<ImageButton>(R.id.elana)
-        val david = findViewById<ImageButton>(R.id.david)
-        val sol = findViewById<ImageButton>(R.id.sol)
-
+        //Sound stuff
         var mMediaPlayer: MediaPlayer? = null
         var bMediaPlayer: MediaPlayer? = null
 
@@ -47,27 +45,29 @@ class Swag : AppCompatActivity() {
             if (bMediaPlayer?.isPlaying == true) bMediaPlayer?.pause()
         }
 
-        maya.setOnClickListener {
-            if (maya.tag == "off") {
+        binding.maya.setOnClickListener {
+            if (binding.maya.tag == "off") {
                 playSound1()
-                maya.tag = "on"
+                binding.maya.tag = "on"
+                binding.shirt.setImageResource(R.drawable.maya)
             } else {
                 pauseSound()
-                maya.tag = "off"
+                binding.maya.tag = "off"
             }
         }
 
-        benji.setOnClickListener {
-            if (benji.tag == "off") {
+        binding.benji.setOnClickListener {
+            if (binding.benji.tag == "off") {
                 playSound2()
-                benji.tag = "on"
+                binding.benji.tag = "on"
+                binding.shirt.setImageResource(R.drawable.daniella)
             } else {
                 pauseSound2()
-                benji.tag = "off"
+                binding.benji.tag = "off"
             }
         }
 
-        //set back button
+        //Back button
         val actionbar = supportActionBar
         actionbar!!.title = "Swag Swag"
         actionbar.setDisplayHomeAsUpEnabled(true)

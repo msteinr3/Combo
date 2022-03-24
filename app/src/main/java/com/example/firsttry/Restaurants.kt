@@ -10,148 +10,137 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import com.example.firsttry.databinding.ActivityMainBinding
+import com.example.firsttry.databinding.ActivityRestaurantsBinding
 import java.lang.StringBuilder
 
 class Restaurants : AppCompatActivity() {
+
+    private lateinit var binding : ActivityRestaurantsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_restaurants)
+        binding = ActivityRestaurantsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        //movie buttons
-        val pizzaBtn = findViewById<ImageButton>(R.id.pizza)
-        val burgerBtn = findViewById<ImageButton>(R.id.burger)
-        val friesBtn = findViewById<ImageButton>(R.id.fries)
-        val cakeBtn = findViewById<ImageButton>(R.id.cake)
-        val spriteBtn = findViewById<ImageButton>(R.id.sprite)
-        val fantaBtn = findViewById<ImageButton>(R.id.fanta)
-
-        val item = findViewById<TextView>(R.id.item)
-        val itemPrice = findViewById<TextView>(R.id.price)
-        val description = findViewById<TextView>(R.id.description)
-
+        //Variables
         var pricePerItem = 0
         var itemName = ""
-        var totalPrice = 0
-
+        var vegan = ""
+        var credit = ""
+        var ampm = ""
+        var timeChosen = ""
+        var numOfSeats = 0
+        var amount = ""
+        var name = ""
         val grow: Animation = AnimationUtils.loadAnimation(this, R.anim.grow)
 
-        pizzaBtn.setOnClickListener {
-            item.setText("Pizza")
-            itemName = "Aladdin"
-            description.text ="Cheese pizza"
+        //Food buttons
+        binding.pizza.setOnClickListener {
+            binding.item.setText("Pizza")
+            itemName = "Pizza"
+            binding.description.text ="Cheese pizza"
             pricePerItem = 20
-            itemPrice.text = pricePerItem.toString()
+            binding.price.text = pricePerItem.toString()
 
-            pizzaBtn.animate().apply {
+            binding.pizza.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                item.startAnimation(grow)
+                binding.item.startAnimation(grow)
             }
         }
 
-        burgerBtn.setOnClickListener {
-            item.setText("Hamburger")
+        binding.burger.setOnClickListener {
+            binding.item.setText("Hamburger")
             itemName = "Burger"
-            description.text ="Cheese burger"
+            binding.description.text ="Cheese burger"
             pricePerItem = 10
-            itemPrice.text = pricePerItem.toString()
+            binding.price.text = pricePerItem.toString()
 
-            burgerBtn.animate().apply {
+            binding.burger.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                item.startAnimation(grow)
+                binding.item.startAnimation(grow)
             }
         }
-        friesBtn.setOnClickListener {
-            item.setText("French Fries")
+        binding.fries.setOnClickListener {
+            binding.item.setText("French Fries")
             itemName = "French Fries"
-            description.text ="French Fries"
+            binding.description.text ="French Fries"
             pricePerItem = 5
-            itemPrice.text = pricePerItem.toString()
+            binding.price.text = pricePerItem.toString()
 
-            friesBtn.animate().apply {
+            binding.fries.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                item.startAnimation(grow)
+                binding.item.startAnimation(grow)
             }
         }
-        cakeBtn.setOnClickListener {
-            item.setText("Cake")
+        binding.cake.setOnClickListener {
+            binding.item.setText("Cake")
             itemName = "Cake"
-            description.text ="1 slice of Chocolate cake"
+            binding.description.text ="1 slice of Chocolate cake"
             pricePerItem = 6
-            itemPrice.text = pricePerItem.toString()
+            binding.price.text = pricePerItem.toString()
 
-            cakeBtn.animate().apply {
+            binding.cake.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                item.startAnimation(grow)
+                binding.item.startAnimation(grow)
             }
         }
-        spriteBtn.setOnClickListener {
-            item.setText("Sprite")
+        binding.sprite.setOnClickListener {
+            binding.item.setText("Sprite")
             itemName = "Sprite"
-            description.text ="Lemon lime soda"
+            binding.description.text ="Lemon lime soda"
             pricePerItem = 3
-            itemPrice.text = pricePerItem.toString()
+            binding.price.text = pricePerItem.toString()
 
-            spriteBtn.animate().apply {
+            binding.sprite.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                item.startAnimation(grow)
+                binding.item.startAnimation(grow)
             }
         }
-        fantaBtn.setOnClickListener {
-            item.setText("Fanta")
+        binding.fanta.setOnClickListener {
+            binding.item.setText("Fanta")
             itemName = "Fanta"
-            description.text ="Orange soda"
+            binding.description.text ="Orange soda"
             pricePerItem = 3
-            itemPrice.text = pricePerItem.toString()
+            binding.price.text = pricePerItem.toString()
 
-            fantaBtn.animate().apply {
+            binding.fanta.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                item.startAnimation(grow)
+               binding.item.startAnimation(grow)
             }
         }
 
-        //other stuff
-        val restrictions = findViewById<RadioGroup>(R.id.restrictions)
-        val rVegan = findViewById<RadioButton>(R.id.vegan)
-        var vegan = ""
-
-        restrictions.setOnCheckedChangeListener { _, _ ->
-            vegan = if (rVegan.isChecked) {
+        //Other stuff
+        binding.restrictions.setOnCheckedChangeListener { _, _ ->
+            vegan = if (binding.vegan.isChecked) {
                 "Vegan"
             } else {
                 "Carnivore"
             }
         }
 
-        val payment = findViewById<RadioGroup>(R.id.paymentMethod)
-        val rCredit = findViewById<RadioButton>(R.id.credit)
-        var credit = ""
-
-        payment.setOnCheckedChangeListener { _, _ ->
-            credit = if (rCredit.isChecked) {
+        binding.paymentMethod.setOnCheckedChangeListener { _, _ ->
+            credit = if (binding.credit.isChecked) {
                 "Credit/Debit"
             } else {
                 "Cash"
             }
         }
 
-        val time = findViewById<TimePicker>(R.id.time)
-        val timeClicked = findViewById<TextView>(R.id.timeClicked)
-        time.setIs24HourView(false)
-        var ampm = ""
-        var timeChosen = ""
-        time.setOnTimeChangedListener { _, hour, minutes, ->
+        binding.time.setIs24HourView(false)
+        binding.time.setOnTimeChangedListener { _, hour, minutes, ->
             ampm = if (hour < 12) {"am"} else {"pm"}
             val hour = if (hour == 0 || hour == 12) {"12"} else {(hour%12).toString()}
             val minutes = if (minutes < 10) {
@@ -159,45 +148,28 @@ class Restaurants : AppCompatActivity() {
             } else {
                 minutes.toString()
             }
-            timeClicked.text = "$hour:$minutes $ampm"
+            binding.timeClicked.text = "$hour:$minutes $ampm"
             timeChosen = "$hour:$minutes $ampm"
         }
 
-        val numSeats = findViewById<EditText>(R.id.numSeats)
-        var numOfSeats = 0
-        var amount = ""
-
-        numSeats.addTextChangedListener(object : TextWatcher {
+        binding.numSeats.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
                 numOfSeats = s.toString().toInt()
                 amount = numOfSeats.toString()
             }
-
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         })
 
-        val restaurant = findViewById<EditText>(R.id.restaurant)
-        var name = ""
-
-        restaurant.addTextChangedListener(object : TextWatcher {
+        binding.restaurant.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
                 name = s.toString()
             }
-
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         })
 
-        val reserve = findViewById<Button>(R.id.reserve)
-        val restaurantName = findViewById<TextView>(R.id.restaurantName)
-        val resTime = findViewById<TextView>(R.id.resTime)
-        val seats = findViewById<TextView>(R.id.seats)
-        val diet = findViewById<TextView>(R.id.diet)
-        val pay = findViewById<TextView>(R.id.pay)
-        val pic = findViewById<ImageView>(R.id.reserved)
-
-        reserve.setOnClickListener {
+        binding.reserve.setOnClickListener {
             if (name == "" || timeChosen == "" || amount == "" || vegan == "" || credit == "") {
                 val builder = StringBuilder("Missing information:\n")
                 if (name.isEmpty()) {
@@ -218,19 +190,18 @@ class Restaurants : AppCompatActivity() {
                 Toast.makeText(this, builder.toString(), Toast.LENGTH_LONG).show()
 
             } else {
-                restaurantName.text = name
-                resTime.text = "Time: $timeChosen"
-                seats.text = "Number of seats: $amount"
-                diet.text = "Dietary restrictions: $vegan"
-                pay.text = "Payment: $credit"
-                pic.setImageResource(R.drawable.reserved)
+                binding.restaurantName.text = name
+                binding.resTime.text = "Time: $timeChosen"
+                binding.seats.text = "Number of seats: $amount"
+                binding.diet.text = "Dietary restrictions: $vegan"
+                binding.pay.text = "Payment: $credit"
+                binding.reserved.setImageResource(R.drawable.reserved)
             }
         }
 
+        //Back button
         val actionbar = supportActionBar
         actionbar!!.title = "Restaurants"
-
-        //set back button
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
     }

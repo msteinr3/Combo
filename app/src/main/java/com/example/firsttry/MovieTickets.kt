@@ -11,289 +11,259 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import com.example.firsttry.databinding.ActivityMovieTicketsBinding
 import java.lang.StringBuilder
 
 class MovieTickets : AppCompatActivity() {
+
+    private lateinit var binding : ActivityMovieTicketsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movie_tickets)
+        binding = ActivityMovieTicketsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        //movie buttons
-        val alBtn = findViewById<ImageButton>(R.id.aladdinButton)
-        val avengersBtn = findViewById<ImageButton>(R.id.avengersButton)
-        val batBtn = findViewById<ImageButton>(R.id.batmanButton)
-        val frozenBtn = findViewById<ImageButton>(R.id.frozenButton)
-        val hpBtn = findViewById<ImageButton>(R.id.hpButton)
-        val lkBtn = findViewById<ImageButton>(R.id.lionButton)
-        val lotrBtn = findViewById<ImageButton>(R.id.lotrButton)
-        val moanaBtn = findViewById<ImageButton>(R.id.moanaButton)
-        val mulanBtn = findViewById<ImageButton>(R.id.mulanButton)
-        val nbBtn = findViewById<ImageButton>(R.id.notebookButton)
-        val piratesBtn = findViewById<ImageButton>(R.id.piratesButton)
-        val tsBtn = findViewById<ImageButton>(R.id.toysButton)
-
-        val whichMovie = findViewById<TextView>(R.id.whichMovie)
-        val moviePrice = findViewById<TextView>(R.id.moviePrice)
-        val movieSummary = findViewById<TextView>(R.id.summary)
-
+        //Movie Buttons
         var pricePerTicket = 0
         var movieName = ""
         var totalPrice = 0
-
         val grow: Animation = AnimationUtils.loadAnimation(this, R.anim.grow)
 
-        alBtn.setOnClickListener {
-            whichMovie.setText(R.string.aladdin)
+        binding.aladdinButton.setOnClickListener {
+            binding.whichMovie.text = "Aladdin"
             movieName = "Aladdin"
-            movieSummary.text =
-                "The film follows the titular Aladdin, an Arabian street urchin, who finds a magic lamp containing a genie. He disguises himself as a wealthy prince and tries to impress the Sultan and his daughter, Princess Jasmine."
+            binding.summary.text = "The film follows the titular Aladdin, an Arabian street urchin, who finds a magic lamp containing a genie. He disguises himself as a wealthy prince and tries to impress the Sultan and his daughter, Princess Jasmine."
             pricePerTicket = 10
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            alBtn.animate().apply {
+            binding.aladdinButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.startAnimation(grow)
+                binding.whichMovie.startAnimation(grow)
             }
         }
 
-        avengersBtn.setOnClickListener {
-            whichMovie.setText(R.string.avengers)
+        binding.avengersButton.setOnClickListener {
+            binding.whichMovie.text = "Avengers"
             movieName = "Avengers"
-            movieSummary.text =
+            binding.summary.text =
                 "Captain America, the Stark Enterprises created super soldier. Thor, the god of thunder, protector of Earth and his home planet of Asgard, and Loki's brother. Master assassins Hawkeye and Natasha Romanoff. Together they will become a team to take on an attack that will call them to become the greatest of all time."
             pricePerTicket = 18
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            avengersBtn.animate().apply {
+            binding.avengersButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.startAnimation(grow)
+                binding.whichMovie.startAnimation(grow)
             }
 
         }
-        batBtn.setOnClickListener {
-            whichMovie.setText(R.string.batman)
+        binding.batmanButton.setOnClickListener {
+            binding.whichMovie.text = "Batman"
             movieName = "Batman: Dark Knight"
-            movieSummary.text =
+            binding.summary.text =
                 "A gang of criminals rob a Gotham City mob bank; the Joker manipulates them into murdering each other for a higher share until only he remains and escapes with the money. Batman, District Attorney Harvey Dent and Lieutenant Jim Gordon form an alliance to rid Gotham of organized crime."
             pricePerTicket = 16
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            batBtn.animate().apply {
+            binding.batmanButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        frozenBtn.setOnClickListener {
-            whichMovie.setText(R.string.frozen)
+        binding.frozenButton.setOnClickListener {
+            binding.whichMovie.text = "Frozen"
             movieName = "Frozen"
-            movieSummary.text =
+            binding.summary.text =
                 "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition."
             pricePerTicket = 10
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            frozenBtn.animate().apply {
+            binding.frozenButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        hpBtn.setOnClickListener {
-            whichMovie.setText(R.string.hp)
+        binding.hpButton.setOnClickListener {
+            binding.whichMovie.text = "Harry Potter"
             movieName = "Harry Potter and the Sorcerer's stone"
-            movieSummary.text =
+            binding.summary.text =
                 "On his 11th birthday, Harry receives a letter inviting him to study magic at the Hogwarts School of Witchcraft and Wizardry. Harry discovers that not only is he a wizard, but he is a famous one. He meets two best friends, Ron Weasley and Hermione Granger, and makes his first enemy, Draco Malfoy."
             pricePerTicket = 13
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            hpBtn.animate().apply {
+            binding.hpButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        lkBtn.setOnClickListener {
-            whichMovie.setText(R.string.lionKing)
+        binding.lionButton.setOnClickListener {
+            binding.whichMovie.text="The Lion King"
             movieName = "The Lion King"
-            movieSummary.text =
+            binding.summary.text =
                 "The Lion King tells the story of Simba (Swahili for lion), a young lion who is to succeed his father, Mufasa, as King of the Pride Lands; however, after Simba's paternal uncle Scar murders Mufasa to seize the throne, Simba is manipulated into thinking he was responsible and flees into exile."
             pricePerTicket = 9
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            lkBtn.animate().apply {
+            binding.lionButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        lotrBtn.setOnClickListener {
-            whichMovie.setText(R.string.lotr)
+        binding.lotrButton.setOnClickListener {
+            binding.whichMovie.text = "The Lord of the Rings"
             movieName = "The Lord of the Rings: \nFellowship of the Ring"
-            movieSummary.text =
+            binding.summary.text =
                 "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron. An ancient Ring thought lost for centuries has been found, and through a strange twist of fate has been given to a small Hobbit named Frodo."
             pricePerTicket = 16
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            lotrBtn.animate().apply {
+            binding.lotrButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        moanaBtn.setOnClickListener {
-            whichMovie.setText(R.string.moana)
+        binding.moanaButton.setOnClickListener {
+            binding.whichMovie.text= "Moana"
             movieName = "Moana"
-            movieSummary.text =
+            binding.summary.text =
                 "An adventurous teenager sails out on a daring mission to save her people. During her journey, Moana meets the once-mighty demigod Maui, who guides her in her quest to become a master wayfinder. Together, they sail across the open ocean on an action-packed voyage, encountering enormous monsters and impossible odds."
             pricePerTicket = 9
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            moanaBtn.animate().apply {
+            binding.moanaButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        mulanBtn.setOnClickListener {
-            whichMovie.setText(R.string.mulan)
+        binding.mulanButton.setOnClickListener {
+            binding.whichMovie.text = "Mulan"
             movieName = "Mulan"
-            movieSummary.text =
+            binding.summary.text =
                 "Mulan is a girl, the only child of her honored family. When the Huns invade China, one man from every family is called to arms. Mulan's father, who has an old wound and cannot walk properly, decides to fight for his country and the honor of his family though it is clear that he will not survive an enemy encounter."
             pricePerTicket = 7
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            mulanBtn.animate().apply {
+            binding.mulanButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        nbBtn.setOnClickListener {
-            whichMovie.setText(R.string.notebook)
+        binding.notebookButton.setOnClickListener {
+            binding.whichMovie.text = "The Notebook"
             movieName = "The Notebook"
-            movieSummary.text =
+            binding.summary.text =
                 "The Notebook is an achingly tender story about the enduring power of love, a story of miracles that will stay with you forever. Set amid the austere beauty of coastal North Carolina in 1946, The Notebook begins with the story of Noah Calhoun, a rural Southerner returned home from World War II."
             pricePerTicket = 12
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            nbBtn.animate().apply {
+            binding.notebookButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        piratesBtn.setOnClickListener {
-            whichMovie.setText(R.string.pirates)
+        binding.piratesButton.setOnClickListener {
+            binding.whichMovie.text = "Pirates of the Caribbean"
             movieName = "Pirates of the Caribbean: \nDead Man's Chest"
-            movieSummary.text =
+            binding.summary.text =
                 "William Turner, a resourceful young blacksmith, teams up with the eccentric pirate \"Captain\" Jack Sparrow to save his love, the Governor's daughter, Elizabeth Swann, who has been mistakenly captured by the clever and treacherous Barbossa, a former ally of Jack, to make a blood sacrifice so as to end the curse that has been casted upon him and his crew. Will and Jack steal a ship from the Royal Navy and arrive at Tortuga, a pirate port. There Jack meets his friend Joshamee Gibbs and with a buccaneer and \"able bodied\" crew, set sail to save Elizabeth and take back the Black Pearl. Meanwhile, Barbossa discovers that not Elizabeth's but someone else's blood was required for the sacrifice. Whose blood is it?"
             pricePerTicket = 14
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            piratesBtn.animate().apply {
+            binding.piratesButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
-        tsBtn.setOnClickListener {
-            whichMovie.setText(R.string.toystory)
+        binding.toysButton.setOnClickListener {
+            binding.whichMovie.text = "Toy Story"
             movieName = "Toy Story"
-            movieSummary.text =
+            binding.summary.text =
                 "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room. A little boy named Andy loves to be in his room, playing with his toys, especially his doll named \"Woody\". But, what do the toys do when Andy is not with them, they come to life."
             pricePerTicket = 8
-            moviePrice.text = pricePerTicket.toString()
+            binding.moviePrice.text = pricePerTicket.toString()
 
-            tsBtn.animate().apply {
+            binding.toysButton.animate().apply {
                 duration = 1000
                 rotationYBy(360f)
             }.withEndAction {
-                whichMovie.animate().apply {
-                    whichMovie.startAnimation(grow)
+                binding.whichMovie.animate().apply {
+                    binding.whichMovie.startAnimation(grow)
                 }
             }
         }
 
-        //other stuff
-
-        val calendar = findViewById<CalendarView>(R.id.calendarView)
-        val dateClicked = findViewById<TextView>(R.id.dateClicked)
+        //Everything else
         var dateChosen = ""
-        calendar.setOnDateChangeListener { _, year, month, dayOfMonth ->
+        var adultChild = ""
+        var amount = ""
+        var numOfTickets = 0
+        var clicked = 0
+
+        binding.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val day = dayOfMonth.toString()
             val year = year.toString()
             val month = (month + 1).toString()
-            dateClicked.text = "$day/$month/$year"
+            binding.dateClicked.text = "$day/$month/$year"
             dateChosen = "$day/$month/$year"
         }
 
-        val ageResult = findViewById<RadioGroup>(R.id.ageResult)
-        val rAdult = findViewById<RadioButton>(R.id.adult)
-        var adultChild = ""
-
-        ageResult.setOnCheckedChangeListener { _, _ ->
-            adultChild = if (rAdult.isChecked) {
+        binding.ageResult.setOnCheckedChangeListener { _, _ ->
+            adultChild = if (binding.adult.isChecked) {
                 "Adult"
             } else {
                 "Minor"
             }
         }
 
-        val numTickets = findViewById<EditText>(R.id.numTickets)
-        var amount = ""
-        var numOfTickets = 0
-
-        numTickets.addTextChangedListener(object : TextWatcher {
+        binding.numTickets.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
                 numOfTickets = s.toString().toInt()
                 amount = numOfTickets.toString()
             }
-
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         })
 
-        val getTix = findViewById<Button>(R.id.buy)
-        val title = findViewById<TextView>(R.id.movieTitle)
-        val number = findViewById<TextView>(R.id.number)
-        val age = findViewById<TextView>(R.id.age)
-        val date = findViewById<TextView>(R.id.date)
-        val price = findViewById<TextView>(R.id.price)
-        val pic = findViewById<ImageView>(R.id.ticket)
-        var clicked = 0
-
-        getTix.setOnClickListener {
+        binding.buy.setOnClickListener {
             if (movieName == "" || amount == "" || adultChild == "" || dateChosen == "") {
                 val builder = StringBuilder("Missing info:\n")
                 if (movieName.isEmpty()) {
@@ -318,20 +288,17 @@ class MovieTickets : AppCompatActivity() {
                 } else {
                     cost
                 }
-
                 clicked = 1
-                title.text = movieName
-                number.text = "Number of tickets: $amount"
-                age.text = adultChild
-                date.text = "date: $dateChosen"
-                price.text = "Total: $$totalPrice"
-                pic.setImageResource(R.drawable.emptytix)
+                binding.movieTitle.text = movieName
+                binding.number.text = "Number of tickets: $amount"
+                binding.age.text = adultChild
+                binding.date.text = "date: $dateChosen"
+                binding.price.text = "Total: $$totalPrice"
+                binding.ticket.setImageResource(R.drawable.emptytix)
             }
         }
 
-        val confirm = findViewById<Button>(R.id.confirm)
-
-        confirm.setOnClickListener {
+        binding.confirm.setOnClickListener {
             if (clicked == 0) {
             } else {
                 val builder = AlertDialog.Builder(this)
