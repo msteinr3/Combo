@@ -127,6 +127,13 @@
                             android:layout_height="150dp"
                             android:layout_marginHorizontal="5dp"
                             android:background="@drawable/toystory" />
+
+                        <RadioButton
+                            android:id="@+id/child"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/child"
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </HorizontalScrollView>
 
@@ -181,12 +188,6 @@
                             android:text="@string/adult"
                             android:textSize="20sp" />
 
-                        <RadioButton
-                            android:id="@+id/child"
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/child"
-                            android:textSize="20sp" />
                     </RadioGroup>
                 </LinearLayout>
 

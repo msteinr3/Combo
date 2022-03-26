@@ -8,14 +8,17 @@
         <entry key="app/src/main/res/drawable/back.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.23" />
         <entry key="app/src/main/res/drawable/movie.xml" value="0.149" />
+        <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.1585" />
         <entry key="app/src/main/res/layout/activity_confirmation.xml" value="0.28430953398888414" />
         <entry key="app/src/main/res/layout/activity_drawing.xml" value="0.24309860407610348" />
         <entry key="app/src/main/res/layout/activity_fashion.xml" value="0.28430953398888414" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2715057373046875" />
         <entry key="app/src/main/res/layout/activity_movie_tickets.xml" value="0.24948665297741274" />
         <entry key="app/src/main/res/layout/activity_restaurants.xml" value="0.267108154296875" />
+        <entry key="app/src/main/res/layout/activity_swag.xml" value="0.29585292860196666" />
         <entry key="app/src/main/res/layout/activity_tic_tac_toe.xml" value="0.2804617357845233" />
         <entry key="app/src/main/res/layout/card_view_grid_item.xml" value="0.2921063739974673" />
         <entry key="app/src/main/res/layout/custom_toast.xml" value="0.29585292860196666" />

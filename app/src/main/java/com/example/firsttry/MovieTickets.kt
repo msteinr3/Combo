@@ -28,10 +28,15 @@ class MovieTickets : AppCompatActivity() {
         var movieName = ""
         var totalPrice = 0
         val grow: Animation = AnimationUtils.loadAnimation(this, R.anim.grow)
+        var dateChosen = ""
+        var adultChild = ""
+        var amount = ""
+        var numOfTickets = 0
+        var clicked = 0
 
         binding.aladdinButton.setOnClickListener {
-            binding.whichMovie.text = "Aladdin"
             movieName = "Aladdin"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text = "The film follows the titular Aladdin, an Arabian street urchin, who finds a magic lamp containing a genie. He disguises himself as a wealthy prince and tries to impress the Sultan and his daughter, Princess Jasmine."
             pricePerTicket = 10
             binding.moviePrice.text = pricePerTicket.toString()
@@ -45,8 +50,8 @@ class MovieTickets : AppCompatActivity() {
         }
 
         binding.avengersButton.setOnClickListener {
-            binding.whichMovie.text = "Avengers"
             movieName = "Avengers"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "Captain America, the Stark Enterprises created super soldier. Thor, the god of thunder, protector of Earth and his home planet of Asgard, and Loki's brother. Master assassins Hawkeye and Natasha Romanoff. Together they will become a team to take on an attack that will call them to become the greatest of all time."
             pricePerTicket = 18
@@ -61,8 +66,8 @@ class MovieTickets : AppCompatActivity() {
 
         }
         binding.batmanButton.setOnClickListener {
-            binding.whichMovie.text = "Batman"
             movieName = "Batman: Dark Knight"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "A gang of criminals rob a Gotham City mob bank; the Joker manipulates them into murdering each other for a higher share until only he remains and escapes with the money. Batman, District Attorney Harvey Dent and Lieutenant Jim Gordon form an alliance to rid Gotham of organized crime."
             pricePerTicket = 16
@@ -78,8 +83,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.frozenButton.setOnClickListener {
-            binding.whichMovie.text = "Frozen"
             movieName = "Frozen"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition."
             pricePerTicket = 10
@@ -95,8 +100,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.hpButton.setOnClickListener {
-            binding.whichMovie.text = "Harry Potter"
             movieName = "Harry Potter and the Sorcerer's stone"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "On his 11th birthday, Harry receives a letter inviting him to study magic at the Hogwarts School of Witchcraft and Wizardry. Harry discovers that not only is he a wizard, but he is a famous one. He meets two best friends, Ron Weasley and Hermione Granger, and makes his first enemy, Draco Malfoy."
             pricePerTicket = 13
@@ -112,8 +117,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.lionButton.setOnClickListener {
-            binding.whichMovie.text="The Lion King"
             movieName = "The Lion King"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "The Lion King tells the story of Simba (Swahili for lion), a young lion who is to succeed his father, Mufasa, as King of the Pride Lands; however, after Simba's paternal uncle Scar murders Mufasa to seize the throne, Simba is manipulated into thinking he was responsible and flees into exile."
             pricePerTicket = 9
@@ -129,8 +134,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.lotrButton.setOnClickListener {
-            binding.whichMovie.text = "The Lord of the Rings"
             movieName = "The Lord of the Rings: \nFellowship of the Ring"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron. An ancient Ring thought lost for centuries has been found, and through a strange twist of fate has been given to a small Hobbit named Frodo."
             pricePerTicket = 16
@@ -146,8 +151,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.moanaButton.setOnClickListener {
-            binding.whichMovie.text= "Moana"
             movieName = "Moana"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "An adventurous teenager sails out on a daring mission to save her people. During her journey, Moana meets the once-mighty demigod Maui, who guides her in her quest to become a master wayfinder. Together, they sail across the open ocean on an action-packed voyage, encountering enormous monsters and impossible odds."
             pricePerTicket = 9
@@ -163,8 +168,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.mulanButton.setOnClickListener {
-            binding.whichMovie.text = "Mulan"
             movieName = "Mulan"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "Mulan is a girl, the only child of her honored family. When the Huns invade China, one man from every family is called to arms. Mulan's father, who has an old wound and cannot walk properly, decides to fight for his country and the honor of his family though it is clear that he will not survive an enemy encounter."
             pricePerTicket = 7
@@ -180,8 +185,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.notebookButton.setOnClickListener {
-            binding.whichMovie.text = "The Notebook"
             movieName = "The Notebook"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "The Notebook is an achingly tender story about the enduring power of love, a story of miracles that will stay with you forever. Set amid the austere beauty of coastal North Carolina in 1946, The Notebook begins with the story of Noah Calhoun, a rural Southerner returned home from World War II."
             pricePerTicket = 12
@@ -197,8 +202,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.piratesButton.setOnClickListener {
-            binding.whichMovie.text = "Pirates of the Caribbean"
             movieName = "Pirates of the Caribbean: \nDead Man's Chest"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "William Turner, a resourceful young blacksmith, teams up with the eccentric pirate \"Captain\" Jack Sparrow to save his love, the Governor's daughter, Elizabeth Swann, who has been mistakenly captured by the clever and treacherous Barbossa, a former ally of Jack, to make a blood sacrifice so as to end the curse that has been casted upon him and his crew. Will and Jack steal a ship from the Royal Navy and arrive at Tortuga, a pirate port. There Jack meets his friend Joshamee Gibbs and with a buccaneer and \"able bodied\" crew, set sail to save Elizabeth and take back the Black Pearl. Meanwhile, Barbossa discovers that not Elizabeth's but someone else's blood was required for the sacrifice. Whose blood is it?"
             pricePerTicket = 14
@@ -214,8 +219,8 @@ class MovieTickets : AppCompatActivity() {
             }
         }
         binding.toysButton.setOnClickListener {
-            binding.whichMovie.text = "Toy Story"
             movieName = "Toy Story"
+            binding.whichMovie.text = "$movieName"
             binding.summary.text =
                 "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room. A little boy named Andy loves to be in his room, playing with his toys, especially his doll named \"Woody\". But, what do the toys do when Andy is not with them, they come to life."
             pricePerTicket = 8
@@ -232,12 +237,6 @@ class MovieTickets : AppCompatActivity() {
         }
 
         //Everything else
-        var dateChosen = ""
-        var adultChild = ""
-        var amount = ""
-        var numOfTickets = 0
-        var clicked = 0
-
         binding.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val day = dayOfMonth.toString()
             val year = year.toString()
@@ -280,8 +279,7 @@ class MovieTickets : AppCompatActivity() {
                 }
                 Toast.makeText(this, builder.toString(), Toast.LENGTH_LONG).show()
 
-            } else {
-                //calculate total
+            } else { //calculate total
                 val cost = numOfTickets * pricePerTicket
                 totalPrice = if (adultChild == "Minor") {
                     cost / 2

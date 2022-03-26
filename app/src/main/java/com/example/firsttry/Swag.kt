@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
-import com.example.firsttry.databinding.ActivityMovieTicketsBinding
 import com.example.firsttry.databinding.ActivitySwagBinding
 
 class Swag : AppCompatActivity() {
@@ -46,6 +45,7 @@ class Swag : AppCompatActivity() {
         }
 
         binding.maya.setOnClickListener {
+            binding.shirttxt.text="Maya"
             if (binding.maya.tag == "off") {
                 playSound1()
                 binding.maya.tag = "on"
@@ -57,6 +57,7 @@ class Swag : AppCompatActivity() {
         }
 
         binding.benji.setOnClickListener {
+            binding.shirttxt.text="Benji"
             if (binding.benji.tag == "off") {
                 playSound2()
                 binding.benji.tag = "on"
@@ -64,6 +65,18 @@ class Swag : AppCompatActivity() {
             } else {
                 pauseSound2()
                 binding.benji.tag = "off"
+            }
+        }
+
+        binding.daniella.setOnClickListener {
+            binding.shirttxt.text="Daniella"
+            if (binding.daniella.tag == "off") {
+                playSound2()
+                binding.daniella.tag = "on"
+                binding.shirt.setImageResource(R.drawable.daniella)
+            } else {
+                pauseSound2()
+                binding.daniella.tag = "off"
             }
         }
 
