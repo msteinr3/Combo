@@ -55,46 +55,47 @@ class MainActivity : AppCompatActivity() {
         }
 
         //sound stuff
-        var mMediaPlayer: MediaPlayer? = null
+        var mp: MediaPlayer? = null
+        var songs = arrayOf(R.raw.tada, R.raw.the_light, R.raw.champaign)
 
         // 0. Plays sound
-        fun playSound() {
-            if (mMediaPlayer == null) {
-                mMediaPlayer = MediaPlayer.create(this, R.raw.tada)
-                mMediaPlayer!!.isLooping = false
-                mMediaPlayer!!.start()
-            } else mMediaPlayer!!.start()
+        fun playSound(song: Int) {
+            if (mp == null) {
+                mp= MediaPlayer.create(this, song)
+                mp!!.isLooping = false
+                mp!!.start()
+            } else mp!!.start()
         }
 
         // 1. Plays sound on loop
-        fun playSoundLooped() {
-            if (mMediaPlayer == null) {
-                mMediaPlayer = MediaPlayer.create(this, R.raw.the_light)
-                mMediaPlayer!!.isLooping = true
-                mMediaPlayer!!.start()
-            } else mMediaPlayer!!.start()
+        fun playSoundLooped(song: Int) {
+            if (mp == null) {
+                mp = MediaPlayer.create(this, song)
+                mp!!.isLooping = true
+                mp!!.start()
+            } else mp!!.start()
         }
 
         // 2. Pause playback
         fun pauseSound() {
-            if (mMediaPlayer?.isPlaying == true) mMediaPlayer?.pause()
+            if (mp?.isPlaying == true) mp?.pause()
         }
 
         // 3. Stops playback
         fun stopSound() {
-            if (mMediaPlayer != null) {
-                mMediaPlayer!!.stop()
-                mMediaPlayer!!.release()
-                mMediaPlayer = null
+            if (mp != null) {
+                mp!!.stop()
+                mp!!.release()
+                mp = null
             }
         }
 
         // 4. Destroys the MediaPlayer instance when the app is closed
         fun onStop() {
             super.onStop()
-            if (mMediaPlayer != null) {
-                mMediaPlayer!!.release()
-                mMediaPlayer = null
+            if (mp != null) {
+                mp!!.release()
+                mp = null
             }
         }
 
@@ -102,7 +103,7 @@ class MainActivity : AppCompatActivity() {
             if (isChecked) {
                 binding.sound.setImageResource(R.drawable.ic_baseline_volume_up_24)
                 binding.onOff.text = "Sound: On"
-                playSoundLooped()
+                playSound(songs[0])
             } else {
                 binding.sound.setImageResource(R.drawable.ic_baseline_volume_off_24)
                 binding.onOff.text = "Sound: Off"
