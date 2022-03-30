@@ -20,5 +20,7 @@
     <string name="pirates">Pirates of the Caribbean: \nDead Man\'s Chest</string>
     <string name="toystory">Toy Story</string>
     <string name="lionKing">The Lion King</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

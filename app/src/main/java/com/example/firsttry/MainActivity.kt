@@ -5,15 +5,19 @@ import android.content.Intent
 import android.content.res.Resources
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.firsttry.databinding.ActivityMainBinding
 import com.example.firsttry.databinding.ActivityMovieTicketsBinding
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,8 +25,38 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val slideIn: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_in)
+        val slideOut: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_out)
+
+
+        //trial fragment
+        binding.fragmentbtn.setOnClickListener {
+            if (binding.fragmentContainer.tag == "off") {
+                replaceFragment(fragment1())
+                binding.fragmentContainer.visibility = View.VISIBLE
+                binding.fragmentContainer.tag = "on"
+                binding.fragmentContainer.animate().apply {
+                    binding.fragmentContainer.startAnimation(slideIn)
+                }
+            } else {
+                binding.fragmentContainer.visibility = View.INVISIBLE
+                binding.fragmentContainer.tag = "off"
+                binding.fragmentContainer.animate().apply {
+                    binding.fragmentContainer.startAnimation(slideOut)
+                }
+            }
+        }
+
+
         //list stuff
-        var array = arrayOf("Movie Tickets", "Restaurants", "Fashion", "Drawing", "Tic Tac Toe", "Swag Swag")
+        var array = arrayOf(
+            "Movie Tickets",
+            "Restaurants",
+            "Fashion",
+            "Drawing",
+            "Tic Tac Toe",
+            "Swag Swag"
+        )
         val adapter = ArrayAdapter(this, R.layout.listview_item, array)
 
         binding.list.adapter = adapter
@@ -61,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         // 0. Plays sound
         fun playSound(song: Int) {
             if (mp == null) {
-                mp= MediaPlayer.create(this, song)
+                mp = MediaPlayer.create(this, song)
                 mp!!.isLooping = false
                 mp!!.start()
             } else mp!!.start()
@@ -111,5 +145,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment)
+        fragmentTransaction.commit()
+    }
+
 }
 

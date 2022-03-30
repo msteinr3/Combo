@@ -13,17 +13,19 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.23" />
         <entry key="app/src/main/res/drawable/movie.xml" value="0.149" />
         <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.1585" />
-        <entry key="app/src/main/res/layout-v31/activity_swag.xml" value="0.36041666666666666" />
+        <entry key="app/src/main/res/layout-v31/activity_swag.xml" value="0.2768625895182292" />
         <entry key="app/src/main/res/layout/activity_confirmation.xml" value="0.28430953398888414" />
         <entry key="app/src/main/res/layout/activity_drawing.xml" value="0.24309860407610348" />
         <entry key="app/src/main/res/layout/activity_fashion.xml" value="0.28430953398888414" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2715057373046875" />
         <entry key="app/src/main/res/layout/activity_movie_tickets.xml" value="0.24948665297741274" />
         <entry key="app/src/main/res/layout/activity_restaurants.xml" value="0.267108154296875" />
-        <entry key="app/src/main/res/layout/activity_swag.xml" value="0.29585292860196666" />
+        <entry key="app/src/main/res/layout/activity_swag.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_tic_tac_toe.xml" value="0.2804617357845233" />
         <entry key="app/src/main/res/layout/card_view_grid_item.xml" value="0.2921063739974673" />
         <entry key="app/src/main/res/layout/custom_toast.xml" value="0.29585292860196666" />
+        <entry key="app/src/main/res/layout/fragment1.xml" value="0.29585292860196666" />
+        <entry key="app/src/main/res/layout/fragment_practice.xml" value="0.29585292860196666" />
         <entry key="app/src/main/res/layout/fragment_video.xml" value="0.29585292860196666" />
         <entry key="app/src/main/res/layout/item_data.xml" value="0.29585292860196666" />
         <entry key="app/src/main/res/layout/listview_item.xml" value="0.20778110303548525" />
