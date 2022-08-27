@@ -29,7 +29,7 @@ class Swag : AppCompatActivity() {
         //Sound and video stuff
         var mp: MediaPlayer? = null
         var vp : MediaController? = null
-        var songs = arrayOf(R.raw.champaign, R.raw.howl, R.raw.tvd1, R.raw.tvd2, R.raw.tada, R.raw.dog, R.raw.duck, R.raw.moo)
+        var songs = arrayOf(R.raw.champaign, R.raw.howl, R.raw.tvd1, R.raw.tvd2, R.raw.everytime, R.raw.tada, R.raw.dog, R.raw.duck, R.raw.moo)
         var videos = arrayOf(R.raw.delena, R.raw.booty)
         var playing = "nobody"
 
@@ -162,7 +162,7 @@ class Swag : AppCompatActivity() {
             binding.shirttxt.text="Sarah"
             binding.shirt.setImageResource(R.drawable.sarah)
             if (binding.sarah.tag == "off" && (playing == "nobody" || playing == "benji")) {
-                playSound(songs[4])
+                playSound(songs[5])
                 playing = "sarah"
                 binding.sarah.tag = "on"
             } else if (binding.sarah.tag == "on" && playing == "sarah") {
@@ -175,7 +175,7 @@ class Swag : AppCompatActivity() {
             binding.shirttxt.text="Jared"
             binding.shirt.setImageResource(R.drawable.jared)
             if (binding.jared.tag == "off" && (playing == "nobody" || playing == "benji")) {
-                playSound(songs[5])
+                playSound(songs[4])
                 playing = "jared"
                 binding.jared.tag = "on"
             } else if (binding.jared.tag == "on" && playing == "jared") {
@@ -245,7 +245,7 @@ class Swag : AppCompatActivity() {
             binding.shirttxt.text="David"
             binding.shirt.setImageResource(R.drawable.david)
             if (binding.david.tag == "off" && (playing == "nobody" || playing == "benji")) {
-                playSound(songs[4])
+                playSound(songs[5])
                 playing = "david"
                 binding.david.tag = "on"
             } else if (binding.david.tag == "on" && playing == "david") {
